@@ -4,5 +4,5 @@ go:
   - 1.6
 
 script:
-  - cd provider-qingcloud
+  - cd provider-dnspod
   - go build
