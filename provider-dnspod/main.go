@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/CuriosityChina/terraform-dnspod"
 	"github.com/hashicorp/terraform/plugin"
-	"github.com/magicshui/terraform-dnspod"
 )
 
 func main() {
