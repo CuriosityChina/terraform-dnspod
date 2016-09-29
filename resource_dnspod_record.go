@@ -39,8 +39,8 @@ func resourceDnspodRecord() *schema.Resource {
 						"NS":    true,
 						"AAAA":  true,
 						"SRV":   true,
-						"显性URL": true,
-						"隐性URL": true,
+						"ExplicitURL": true,
+						"ImplicitURL": true,
 					}
 					if !opts[value] {
 						es = append(es, fmt.Errorf(
@@ -52,10 +52,10 @@ func resourceDnspodRecord() *schema.Resource {
 			"line": &schema.Schema{
 				Type:     schema.TypeString,
 				Optional: true,
-				Default:  "默认",
+				Default:  "Default",
 				ValidateFunc: func(v interface{}, k string) (ws []string, es []error) {
 					value := v.(string)
-					opts := []string{"默认", "国内", "国外", "电信", "联通", "教育网", "移动", "百度", "谷歌", "搜搜", "有道", "必应", "搜狗", "奇虎", "搜索引擎"}
+					opts := []string{"Google", "Yahoo"}
 					var ok bool
 					for i := range opts {
 						if opts[i] == value {
@@ -64,7 +64,7 @@ func resourceDnspodRecord() *schema.Resource {
 					}
 					if !ok {
 						es = append(es, fmt.Errorf(
-							"类型不正确 %q", k))
+							"Incorrect Type %q", k))
 					}
 					return
 				},
@@ -82,7 +82,7 @@ func resourceDnspodRecord() *schema.Resource {
 						return
 					}
 					es = append(es, fmt.Errorf(
-						"范围1-20 %q", k))
+						"Range 1-20 %q", k))
 					return
 				},
 			},
@@ -96,7 +96,7 @@ func resourceDnspodRecord() *schema.Resource {
 						return
 					}
 					es = append(es, fmt.Errorf(
-						"范围1-604800，不同等级域名最小值不同 %q", k))
+						"Range 1-604800 %q", k))
 					return
 				},
 			},
@@ -108,7 +108,7 @@ func resourceDnspodRecord() *schema.Resource {
 					value := v.(string)
 					if value != "enable" && value != "disable" {
 						es = append(es, fmt.Errorf(
-							"范围1-604800，不同等级域名最小值不同 %q", k))
+							"Range 1-604800 %q", k))
 					}
 					return
 				},
@@ -122,7 +122,7 @@ func resourceDnspodRecord() *schema.Resource {
 						return
 					}
 					es = append(es, fmt.Errorf(
-						"0到100的整数，可选。仅企业 VIP 域名可用 %q", k))
+						"0-100 integer，Optional. Only enterprise VIP domain names are available %q", k))
 					return
 				},
 			},
