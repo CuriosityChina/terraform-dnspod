@@ -4,7 +4,7 @@
 
 ## 安装 dnspod-provider
 ```
-go install -v github.com/CuriosityChina/terraform-qingcloud/provider-dnspod
+go install -v go install -v github.com/CuriosityChina/terraform-dnspod/provider-dnspod
 ```
 
 ## 设置 terraform 的插件路径
