@@ -1,26 +1,26 @@
 # Terraform DNSPod Provider [WIP] [![Build Status](https://travis-ci.org/CuriosityChina/terraform-dnspod.svg?branch=master)](https://travis-ci.org/CuriosityChina/terraform-dnspod)
 
-# 使用方式
+# Usage
 
-## 安装 dnspod-provider
+## Installation dnspod-provider
 ```
 go install -v go install -v github.com/CuriosityChina/terraform-dnspod/provider-dnspod
 ```
 
-## 设置 terraform 的插件路径
+## Configuring the terraform plug in path
 
 ```
-# 启动编辑器
+# edit
 subl ~/.terraformrc
 
-# 修改如下qingcloud 到你本地的路径
+# Modify the following path to your local installation
 providers {
 	dnspod = "/Users/YOUR/GO/PATH/bin/provider-dnspod"
 }
 ```
 
 ## Sample
-如下是一个使用案例
+Example
 ```
 provider "dnspod"{
 	id = "xxx"
@@ -31,7 +31,7 @@ variable "domain_id" {
 	default = 123123123
 }
 
-# 设置以一个域名
+# Domain name
 resource "dnspod_record" "first"{
 	domain_id = "${var.domain_id}"
 	sub_domain = "a"
@@ -42,7 +42,7 @@ resource "dnspod_record" "first"{
 	ttl = "12312"
 	status = "enable"
 }
-# 设置第二个域名
+# Second domain name
 resource "dnspod_record" "second"{
 	domain_id = "${var.domain_id}"
 	sub_domain = "b"

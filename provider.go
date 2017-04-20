@@ -38,7 +38,7 @@ var descriptions map[string]string
 
 func init() {
 	descriptions = map[string]string{
-		"id":    "个人的ID",
-		"token": "账号的 token ",
+		"id":    "PersonalID",
+		"token": "Account token ",
 	}
 }
