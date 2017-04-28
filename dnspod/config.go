@@ -1,8 +1,8 @@
 package dnspod
 
 import (
-	"github.com/magicshui/dnspod-go"
-	"github.com/magicshui/dnspod-go/record"
+	"github.com/CuriosityChina/dnspod-go"
+	"github.com/CuriosityChina/dnspod-go/record"
 )
 
 type Config struct {
