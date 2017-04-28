@@ -24,6 +24,13 @@ _testmain.go
 *.prof
 
 
-/test-rt
 
-/provider-dnspod/provider-dnspod
+.DS_Store
+vendor/
+/test-tf
+terraform-provider-dnspod*
+terraform-dnspod*
+api.md
+/test-*
+*.tfstate
+build
