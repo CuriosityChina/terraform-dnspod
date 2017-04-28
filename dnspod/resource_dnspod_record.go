@@ -136,7 +136,7 @@ func resourceDnspodRecord() *schema.Resource {
 }
 
 func resourceDnspodRecordCreate(d *schema.ResourceData, meta interface{}) error {
-	clt := meta.(*DnsPodClient).record
+	clt := meta.(*DNSPodClient).record
 	params := service.RecordCreateRequest{
 		DomainID:   d.Get("domain_id").(int),
 		SubDomain:  d.Get("sub_domain").(string),
@@ -158,7 +158,7 @@ func resourceDnspodRecordCreate(d *schema.ResourceData, meta interface{}) error 
 }
 
 func resourceDnspodRecordRead(d *schema.ResourceData, meta interface{}) error {
-	clt := meta.(*DnsPodClient).record
+	clt := meta.(*DNSPodClient).record
 	params := service.RecordInfoRequest{
 		RecordID: d.Id(),
 		DomainID: d.Get("domain_id").(int),
@@ -176,7 +176,7 @@ func resourceDnspodRecordRead(d *schema.ResourceData, meta interface{}) error {
 }
 
 func resourceDnspodRecordUpdate(d *schema.ResourceData, meta interface{}) error {
-	clt := meta.(*DnsPodClient).record
+	clt := meta.(*DNSPodClient).record
 	params := service.RecordModifyRequest{
 		RecordID:   d.Id(),
 		DomainID:   d.Get("domain_id").(int),
@@ -200,7 +200,7 @@ func resourceDnspodRecordUpdate(d *schema.ResourceData, meta interface{}) error 
 }
 
 func resourceDnspodRecordDelete(d *schema.ResourceData, meta interface{}) error {
-	clt := meta.(*DnsPodClient).record
+	clt := meta.(*DNSPodClient).record
 	params := service.RecordRemoveRequest{
 		DomainID: d.Get("domain_id").(int),
 		RecordID: d.Id(),
