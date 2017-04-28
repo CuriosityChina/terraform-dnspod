@@ -5,7 +5,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/CuriosityChina/dnspod-go/record"
+	"github.com/CuriosityChina/dnspod-go/service"
 	"github.com/hashicorp/terraform/helper/schema"
 )
 
@@ -137,8 +137,8 @@ func resourceDnspodRecord() *schema.Resource {
 
 func resourceDnspodRecordCreate(d *schema.ResourceData, meta interface{}) error {
 	clt := meta.(*DnsPodClient).record
-	params := record.RecordCreateRequest{
-		DomainId:   d.Get("domain_id").(int),
+	params := service.RecordCreateRequest{
+		DomainID:   d.Get("domain_id").(int),
 		SubDomain:  d.Get("sub_domain").(string),
 		RecordType: d.Get("type").(string),
 		RecordLine: d.Get("line").(string),
@@ -159,9 +159,9 @@ func resourceDnspodRecordCreate(d *schema.ResourceData, meta interface{}) error 
 
 func resourceDnspodRecordRead(d *schema.ResourceData, meta interface{}) error {
 	clt := meta.(*DnsPodClient).record
-	params := record.RecordInfoRequest{
-		RecordId: d.Id(),
-		DomainId: d.Get("domain_id").(int),
+	params := service.RecordInfoRequest{
+		RecordID: d.Id(),
+		DomainID: d.Get("domain_id").(int),
 	}
 	resp, err := clt.RecordInfo(params)
 	if err != nil {
@@ -177,9 +177,9 @@ func resourceDnspodRecordRead(d *schema.ResourceData, meta interface{}) error {
 
 func resourceDnspodRecordUpdate(d *schema.ResourceData, meta interface{}) error {
 	clt := meta.(*DnsPodClient).record
-	params := record.RecordModifyRequest{
-		RecordId:   d.Id(),
-		DomainId:   d.Get("domain_id").(int),
+	params := service.RecordModifyRequest{
+		RecordID:   d.Id(),
+		DomainID:   d.Get("domain_id").(int),
 		SubDomain:  d.Get("sub_domain").(string),
 		RecordType: d.Get("type").(string),
 		RecordLine: d.Get("line").(string),
@@ -201,9 +201,9 @@ func resourceDnspodRecordUpdate(d *schema.ResourceData, meta interface{}) error 
 
 func resourceDnspodRecordDelete(d *schema.ResourceData, meta interface{}) error {
 	clt := meta.(*DnsPodClient).record
-	params := record.RecordRemoveRequest{
-		DomainId: d.Get("domain_id").(int),
-		RecordId: d.Id(),
+	params := service.RecordRemoveRequest{
+		DomainID: d.Get("domain_id").(int),
+		RecordID: d.Id(),
 	}
 	_, err := clt.RecordRemove(params)
 	if err != nil {

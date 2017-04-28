@@ -1,8 +1,8 @@
 package dnspod
 
 import (
-	"github.com/CuriosityChina/dnspod-go"
-	"github.com/CuriosityChina/dnspod-go/record"
+	"github.com/CuriosityChina/dnspod-go/client"
+	"github.com/CuriosityChina/dnspod-go/service"
 )
 
 type Config struct {
@@ -11,12 +11,12 @@ type Config struct {
 }
 
 type DnsPodClient struct {
-	record *record.RECORD
+	record *service.RecordService
 }
 
 func (c *Config) Client() (*DnsPodClient, error) {
-	clt := dnspod.NewClient(c.ID, c.Token)
+	clt := client.NewClient(c.ID, c.Token)
 	return &DnsPodClient{
-		record: record.NewClient(clt),
+		record: service.NewRecordService(clt),
 	}, nil
 }
