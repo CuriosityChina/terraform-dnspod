@@ -1,5 +1,5 @@
-hash: 14d281ce033a981f10b8739de59971e54b53fe72182fa22c7f6a06c8edd15bcf
-updated: 2017-04-28T17:55:27.04947802+08:00
+hash: 46980b84fcffd1bd2f8013e31818eb515e04b7d4a4d3ac2bebd51e95abcb7efb
+updated: 2017-04-28T19:36:33.140433148+08:00
 imports:
 - name: github.com/apparentlymart/go-cidr
   version: 7e4b007599d4e2076d9a81be723b3912852dda2c
@@ -37,9 +37,10 @@ imports:
   subpackages:
   - netrc
 - name: github.com/CuriosityChina/dnspod-go
-  version: 7168e92e8d3c6bed39ef0ab7b3f9a425af3b5ddb
+  version: 66d389053c8f9a9ff7a75abe98c970812577316f
   subpackages:
-  - record
+  - client
+  - service
 - name: github.com/go-ini/ini
   version: e7fea39b01aea8d5671f6858f0532f56e8bff3a5
 - name: github.com/google/go-querystring
