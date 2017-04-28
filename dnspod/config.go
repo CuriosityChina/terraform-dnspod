@@ -5,18 +5,21 @@ import (
 	"github.com/CuriosityChina/dnspod-go/service"
 )
 
+// Config dnspod provider configration
 type Config struct {
 	ID    string
 	Token string
 }
 
-type DnsPodClient struct {
+// DNSPodClient dnspod resource client
+type DNSPodClient struct {
 	record *service.RecordService
 }
 
-func (c *Config) Client() (*DnsPodClient, error) {
+// Client dnspod provider client
+func (c *Config) Client() (*DNSPodClient, error) {
 	clt := client.NewClient(c.ID, c.Token)
-	return &DnsPodClient{
+	return &DNSPodClient{
 		record: service.NewRecordService(clt),
 	}, nil
 }
