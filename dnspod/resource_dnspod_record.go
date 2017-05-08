@@ -127,10 +127,6 @@ func resourceDnspodRecord() *schema.Resource {
 					return
 				},
 			},
-			"record_id": &schema.Schema{
-				Type:     schema.TypeString,
-				Computed: true,
-			},
 		},
 	}
 }
@@ -152,7 +148,6 @@ func resourceDnspodRecordCreate(d *schema.ResourceData, meta interface{}) error 
 	if err != nil {
 		return err
 	}
-	d.Set("record_id", resp.Record.ID)
 	d.SetId(resp.Record.ID)
 	return nil
 }
@@ -194,7 +189,6 @@ func resourceDnspodRecordUpdate(d *schema.ResourceData, meta interface{}) error 
 		return err
 	}
 	log.Printf("After change :%s", resp.Record.ID)
-	d.Set("record_id", strconv.Itoa(resp.Record.ID))
 	d.SetId(strconv.Itoa(resp.Record.ID))
 	return nil
 }
