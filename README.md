@@ -1,22 +1,12 @@
 # Terraform DNSPod Provider [WIP] [![Build Status](https://travis-ci.org/CuriosityChina/terraform-dnspod.svg?branch=master)](https://travis-ci.org/CuriosityChina/terraform-dnspod)
 
-# 使用方式
+# Usage
 
-## 安装 dnspod-provider
+## Install terraform-dnspod-provider
 ```
-go install -v go install -v github.com/CuriosityChina/terraform-dnspod/provider-dnspod
-```
-
-## 设置 terraform 的插件路径
-
-```
-# 启动编辑器
-subl ~/.terraformrc
-
-# 修改如下qingcloud 到你本地的路径
-providers {
-	dnspod = "/Users/YOUR/GO/PATH/bin/provider-dnspod"
-}
+wget -c https://github.com/CuriosityChina/terraform-dnspod/releases/download/v1.0.0/terraform-provider-dnspod_linux-amd64.tgz
+tar -zxvf terraform-provider-dnspod_linux-amd64.tgz
+cp terraform-provider-dnspod_linux-amd64 $(dirname `which terraform`)/terraform-provider-dnspod
 ```
 
 ## Sample

@@ -34,7 +34,8 @@ errcheck:
 	@sh -c "'$(CURDIR)/scripts/errcheck.sh'"
 
 dist:
-	rm ./build/*
+	mkdir -p ./build
+	rm -r ./build
 	gox -osarch="linux/amd64" -output=terraform-provider-dnspod_{{.OS}}-{{.Arch}}
 	gox -osarch="darwin/amd64" -output=terraform-provider-dnspod_{{.OS}}-{{.Arch}}
 	gox -osarch="windows/amd64" -output=terraform-provider-dnspod_{{.OS}}-{{.Arch}}
