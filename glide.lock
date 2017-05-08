@@ -1,12 +1,12 @@
-hash: 46980b84fcffd1bd2f8013e31818eb515e04b7d4a4d3ac2bebd51e95abcb7efb
-updated: 2017-04-28T19:36:33.140433148+08:00
+hash: e7e0ce9b87398fec7304cb8cdf63212e02462d7fb0d279a13632908f9f0e579a
+updated: 2017-05-08T17:43:47.116742276+08:00
 imports:
 - name: github.com/apparentlymart/go-cidr
   version: 7e4b007599d4e2076d9a81be723b3912852dda2c
   subpackages:
   - cidr
 - name: github.com/aws/aws-sdk-go
-  version: 80dd71257d3f3b4edc647af948315f82b6262958
+  version: a5b389b7b05c59adf7ac44f50d0d8be6e0c85710
   subpackages:
   - aws
   - aws/awserr
@@ -37,7 +37,7 @@ imports:
   subpackages:
   - netrc
 - name: github.com/CuriosityChina/dnspod-go
-  version: 66d389053c8f9a9ff7a75abe98c970812577316f
+  version: 07b913a9169cd844a7102067549ad864505d9e0d
   subpackages:
   - client
   - service
@@ -50,7 +50,7 @@ imports:
 - name: github.com/hashicorp/errwrap
   version: 7554cd9344cec97297fa6649b055a8c98c2a1e55
 - name: github.com/hashicorp/go-getter
-  version: e48f67b534e614bf7fbd978fd0020f61a17b7527
+  version: 90b6568eac830f62a08e8f1f46375daa63e57015
   subpackages:
   - helper/url
 - name: github.com/hashicorp/go-multierror
@@ -62,7 +62,7 @@ imports:
 - name: github.com/hashicorp/go-version
   version: 03c5bf6be031b6dd45afec16b1cf94fc8938bc77
 - name: github.com/hashicorp/hcl
-  version: 7fa7fff964d035e8a162cce3a164b3ad02ad651b
+  version: a4b07c25de5ff55ad3b8936cea69a79a3d95a855
   subpackages:
   - hcl/ast
   - hcl/parser
@@ -73,7 +73,7 @@ imports:
   - json/scanner
   - json/token
 - name: github.com/hashicorp/hil
-  version: 5b8d13c8c5c2753e109fab25392a1dbfa2db93d2
+  version: 747a6e1523d6808f91144df070435b16865cd333
   subpackages:
   - ast
   - parser
@@ -100,6 +100,8 @@ imports:
   version: f81071c9d77b7931f78c90b416a074ecdc50e959
 - name: github.com/mitchellh/go-homedir
   version: b8bc1bf767474819792c23f32d8286a45736f1c6
+- name: github.com/mitchellh/go-testing-interface
+  version: 477c2d05a845d8b55912a5a7993b9b24abcc5ef8
 - name: github.com/mitchellh/hashstructure
   version: ab25296c0f51f1022f01cd99dfb45f1775de8799
 - name: github.com/mitchellh/mapstructure
