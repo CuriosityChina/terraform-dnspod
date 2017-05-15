@@ -2,7 +2,6 @@ package dnspod
 
 import (
 	"fmt"
-	"log"
 	"strconv"
 
 	"github.com/CuriosityChina/dnspod-go/service"
@@ -149,7 +148,7 @@ func resourceDnspodRecordCreate(d *schema.ResourceData, meta interface{}) error 
 		return err
 	}
 	d.SetId(resp.Record.ID)
-	return nil
+	return resourceDnspodRecordRead(d, meta)
 }
 
 func resourceDnspodRecordRead(d *schema.ResourceData, meta interface{}) error {
@@ -163,6 +162,7 @@ func resourceDnspodRecordRead(d *schema.ResourceData, meta interface{}) error {
 		return err
 	}
 	d.Set("domain_id", resp.Domain.ID)
+	d.Set("type", resp.Record.Type)
 	d.Set("sub_domain", resp.Record.SubDomain)
 	d.Set("value", resp.Record.Value)
 	d.Set("ttl", resp.Record.TTL)
@@ -184,13 +184,11 @@ func resourceDnspodRecordUpdate(d *schema.ResourceData, meta interface{}) error 
 		Status:     d.Get("status").(string),
 		Weight:     d.Get("weight").(string),
 	}
-	resp, err := clt.RecordModify(params)
+	_, err := clt.RecordModify(params)
 	if err != nil {
 		return err
 	}
-	log.Printf("After change :%s", resp.Record.ID)
-	d.SetId(strconv.Itoa(resp.Record.ID))
-	return nil
+	return resourceDnspodRecordRead(d, meta)
 }
 
 func resourceDnspodRecordDelete(d *schema.ResourceData, meta interface{}) error {
