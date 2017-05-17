@@ -3,9 +3,9 @@ VETARGS?=-all
 TEST?=$$(go list ./...)
 
 
-all: build copy
+all: dev copy
 
-build:
+dev:
 	go build -o terraform-provider-dnspod
 
 copy:

@@ -162,7 +162,7 @@ func resourceDnspodRecordRead(d *schema.ResourceData, meta interface{}) error {
 		return err
 	}
 	d.Set("domain_id", resp.Domain.ID)
-	d.Set("type", resp.Record.Type)
+	d.Set("type", resp.Record.RecordType)
 	d.Set("sub_domain", resp.Record.SubDomain)
 	d.Set("value", resp.Record.Value)
 	d.Set("ttl", resp.Record.TTL)
