@@ -1,12 +1,12 @@
-hash: e7e0ce9b87398fec7304cb8cdf63212e02462d7fb0d279a13632908f9f0e579a
-updated: 2017-05-08T17:43:47.116742276+08:00
+hash: 1e45142de68bacbb00a303ea635301ff6ea62874c4643fc582398505afe126c3
+updated: 2017-05-17T13:09:08.879153988+08:00
 imports:
 - name: github.com/apparentlymart/go-cidr
   version: 7e4b007599d4e2076d9a81be723b3912852dda2c
   subpackages:
   - cidr
 - name: github.com/aws/aws-sdk-go
-  version: a5b389b7b05c59adf7ac44f50d0d8be6e0c85710
+  version: fed27f4bd16c8c63d01003b978e5bc85fe727519
   subpackages:
   - aws
   - aws/awserr
@@ -37,9 +37,10 @@ imports:
   subpackages:
   - netrc
 - name: github.com/CuriosityChina/dnspod-go
-  version: 07b913a9169cd844a7102067549ad864505d9e0d
+  version: 656dc0cb4b2c2d6f0bc470c472d509cd375ae6c0
   subpackages:
   - client
+  - logger
   - service
 - name: github.com/go-ini/ini
   version: e7fea39b01aea8d5671f6858f0532f56e8bff3a5
@@ -56,13 +57,13 @@ imports:
 - name: github.com/hashicorp/go-multierror
   version: ed905158d87462226a13fe39ddf685ea65f1c11f
 - name: github.com/hashicorp/go-plugin
-  version: 1ffca25a1118915effa6d7585a0550fec8cb44fd
+  version: b7d6477501c13292d71fd3b8e688269e51b028ba
 - name: github.com/hashicorp/go-uuid
   version: 64130c7a86d732268a38cb04cfbaf0cc987fda98
 - name: github.com/hashicorp/go-version
   version: 03c5bf6be031b6dd45afec16b1cf94fc8938bc77
 - name: github.com/hashicorp/hcl
-  version: a4b07c25de5ff55ad3b8936cea69a79a3d95a855
+  version: 392dba7d905ed5d04a5794ba89f558b27e2ba1ca
   subpackages:
   - hcl/ast
   - hcl/parser
@@ -73,7 +74,7 @@ imports:
   - json/scanner
   - json/token
 - name: github.com/hashicorp/hil
-  version: 747a6e1523d6808f91144df070435b16865cd333
+  version: fac2259da677551de1fb92b844c4d020a38d8468
   subpackages:
   - ast
   - parser
@@ -103,11 +104,19 @@ imports:
 - name: github.com/mitchellh/go-testing-interface
   version: 477c2d05a845d8b55912a5a7993b9b24abcc5ef8
 - name: github.com/mitchellh/hashstructure
-  version: ab25296c0f51f1022f01cd99dfb45f1775de8799
+  version: 9204ce590301a868e3e86938bc12eadd416b211e
 - name: github.com/mitchellh/mapstructure
   version: cc8532a8e9a55ea36402aa21efdf403a60d34096
 - name: github.com/mitchellh/reflectwalk
-  version: 417edcfd99a4d472c262e58f22b4bfe97580f03e
+  version: 8d802ff4ae93611b807597f639c19f76074df5c6
+- name: github.com/qiniu/log
+  version: a304a74568d6982c5b89de1c68ac8fca3add196a
 - name: github.com/satori/go.uuid
   version: 5bf94b69c6b68ee1b541973bb8e1144db23a194b
+- name: github.com/Sirupsen/logrus
+  version: 5e5dc898656f695e2a086b8e12559febbfc01562
+- name: golang.org/x/sys
+  version: 1e99a4f9d247b28c670884b9a8d6801f39a47b77
+  subpackages:
+  - unix
 testImports: []

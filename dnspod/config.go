@@ -2,6 +2,7 @@ package dnspod
 
 import (
 	"github.com/CuriosityChina/dnspod-go/client"
+	"github.com/CuriosityChina/dnspod-go/logger"
 	"github.com/CuriosityChina/dnspod-go/service"
 )
 
@@ -19,6 +20,7 @@ type DNSPodClient struct {
 // Client dnspod provider client
 func (c *Config) Client() (*DNSPodClient, error) {
 	clt := client.NewClient(c.ID, c.Token)
+	logger.SetLevel("debug")
 	return &DNSPodClient{
 		record: service.NewRecordService(clt),
 	}, nil

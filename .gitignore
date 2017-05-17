@@ -34,3 +34,4 @@ api.md
 /test-*
 *.tfstate
 build
+dist

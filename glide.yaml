@@ -1,10 +1,10 @@
 package: github.com/CuriosityChina/terraform-dnspod
 import:
 - package: github.com/CuriosityChina/dnspod-go
-  version: v0.1.6
+  version: v0.2.0
   subpackages:
   - client
-  - service  
+  - service
 - package: github.com/hashicorp/terraform
   version: 0.9.1
   subpackages:  

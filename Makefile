@@ -34,11 +34,15 @@ errcheck:
 	@sh -c "'$(CURDIR)/scripts/errcheck.sh'"
 
 dist:
-	mkdir -p ./build
-	rm -r ./build
+	mkdir -p ./dist
+	rm -r ./dist
 	gox -osarch="linux/amd64" -output=terraform-provider-dnspod_{{.OS}}-{{.Arch}}
 	gox -osarch="darwin/amd64" -output=terraform-provider-dnspod_{{.OS}}-{{.Arch}}
 	gox -osarch="windows/amd64" -output=terraform-provider-dnspod_{{.OS}}-{{.Arch}}
-	mkdir -p ./build
-	mv terraform-provider-dnspod_* ./build
-	cd build && ls --color=no | xargs -I {} tar -czf {}.tgz {}
+	mkdir -p ./dist
+	mv terraform-provider-dnspod_* ./dist
+	cd dist && ls --color=no | xargs -I {} tar -czf {}.tgz {}
+
+clean:
+	rm -r ./dist
+	rm terraform-provider-dnspod
